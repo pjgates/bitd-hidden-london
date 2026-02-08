@@ -1,5 +1,9 @@
 import { MODULE_ID } from "../constants.js";
 
+function capitalize(s: string): string {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
 /**
  * Inject "Push Yourself" attribute buttons into the upstream BitD system's
  * action roll chat cards when the result is a failure or partial success.
