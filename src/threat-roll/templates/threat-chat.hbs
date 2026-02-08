@@ -1,0 +1,82 @@
+<div class="hl-threat-card">
+    {{!-- Header --}}
+    <div class="hl-card-header">
+        <h3>{{localize "HIDDEN_LONDON.ThreatRoll"}}</h3>
+        <div class="hl-card-position">
+            {{positionLabel}} | {{effectLabel}}
+            {{#if zeroMode}} | 0d{{/if}}
+        </div>
+    </div>
+
+    {{!-- Assigned dice results --}}
+    {{#each assignedDice}}
+    <div class="hl-threat-result {{outcomeClass}}">
+        <div class="hl-die-display">
+            <ol class="dice-rolls">
+                <li class="roll die d6 {{outcomeClass}}">{{value}}</li>
+            </ol>
+        </div>
+        <div class="hl-outcome-label">
+            {{#if (eq threatIndex 0)}}
+                <strong>{{outcomeLabel}}</strong>
+            {{else}}
+                {{localize "HIDDEN_LONDON.AdditionalThreat"}} #{{threatIndex}}: <strong>{{outcomeLabel}}</strong>
+            {{/if}}
+        </div>
+        <div class="hl-outcome-description">
+            {{#if (eq outcome "critical")}}
+                {{localize "HIDDEN_LONDON.Desc.Critical"}}
+            {{else if (eq outcome "success")}}
+                {{localize "HIDDEN_LONDON.Desc.Success"}}
+            {{else if (eq outcome "peril")}}
+                {{localize "HIDDEN_LONDON.Desc.Peril"}}
+            {{else}}
+                {{localize "HIDDEN_LONDON.Desc.Threat"}}
+            {{/if}}
+        </div>
+    </div>
+    {{/each}}
+
+    {{!-- Unused dice --}}
+    {{#if unusedDice.length}}
+    <div class="hl-unused-dice">
+        <span class="hl-unused-label">{{localize "HIDDEN_LONDON.UnusedDice"}}:</span>
+        <ol class="dice-rolls">
+            {{#each unusedDice}}
+            <li class="roll die d6 unused">{{this}}</li>
+            {{/each}}
+        </ol>
+    </div>
+    {{/if}}
+
+    {{!-- Situational modifiers --}}
+    {{#if modifiers.length}}
+    <div class="hl-modifiers">
+        <em>{{localize "HIDDEN_LONDON.ActiveModifiers"}}:</em>
+        {{#each modifiers}}
+            <span class="hl-modifier-tag">{{label}}</span>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{!-- XP flag for desperate rolls --}}
+    {{#if markXP}}
+    <div class="hl-xp-note">
+        <i class="fas fa-star"></i> {{localize "HIDDEN_LONDON.MarkXP"}}
+    </div>
+    {{/if}}
+
+    {{!-- Note --}}
+    {{#if note}}
+    <div class="hl-note">
+        <em>{{note}}</em>
+    </div>
+    {{/if}}
+
+    {{!-- Push button --}}
+    <div class="hl-push-section">
+        <button class="hl-push-button" type="button">
+            <i class="fas fa-fist-raised"></i> {{localize "HIDDEN_LONDON.Push.PushYourself"}}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+{
+    "id": "bitd-hidden-london",
+    "title": "Hidden London",
+    "description": "Hidden London supplement for Blades in the Dark — threat rolls, push yourself, factions, locations, and reference material for occult-industrial 1820s London.",
+    "version": "0.1.0",
+    "compatibility": {
+        "minimum": "12",
+        "verified": "13.351"
+    },
+    "relationships": {
+        "systems": [
+            {
+                "id": "blades-in-the-dark",
+                "type": "system"
+            }
+        ]
+    },
+    "authors": [
+        {
+            "name": "peterg"
+        }
+    ],
+    "esmodules": [
+        "dist/module.js"
+    ],
+    "styles": [
+        "dist/module.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "dist/lang/en.json"
+        }
+    ],
+    "packs": [
+        {
+            "name": "hidden-london-factions",
+            "label": "Hidden London — Factions",
+            "path": "packs/hidden-london-factions",
+            "type": "JournalEntry"
+        },
+        {
+            "name": "hidden-london-locations",
+            "label": "Hidden London — Locations",
+            "path": "packs/hidden-london-locations",
+            "type": "JournalEntry"
+        },
+        {
+            "name": "hidden-london-reference",
+            "label": "Hidden London — Reference",
+            "path": "packs/hidden-london-reference",
+            "type": "JournalEntry"
+        }
+    ],
+    "packFolders": [
+        {
+            "name": "Hidden London",
+            "sorting": "m",
+            "packs": [
+                "hidden-london-factions",
+                "hidden-london-locations",
+                "hidden-london-reference"
+            ]
+        }
+    ]
+}
