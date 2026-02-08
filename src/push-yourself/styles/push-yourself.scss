@@ -3,8 +3,8 @@
 // Section injected into system action roll chat cards
 .hl-push-section {
     margin-top: 8px;
-    padding-top: 6px;
-    border-top: 1px solid #ddd;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ddd;
     text-align: center;
 
     .hl-push-label {
@@ -39,6 +39,16 @@
 
         &:hover {
             background: #333;
+        }
+    }
+
+    &.hl-pushed {
+        font-size: 11px;
+        font-style: italic;
+        color: #555;
+
+        i {
+            margin-right: 3px;
         }
     }
 }

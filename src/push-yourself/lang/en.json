@@ -1,7 +1,9 @@
 {
     "HIDDEN_LONDON": {
         "Push": {
-            "PushYourself": "Push Yourself"
+            "PushYourself": "Push Yourself",
+            "Pushed": "Pushed yourself",
+            "NoCharacter": "Select a character token or assign a character to push yourself."
         },
         "Attribute": {
             "Insight": "Insight",

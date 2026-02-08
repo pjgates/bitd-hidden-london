@@ -1,6 +1,6 @@
 {
     "name": "bitd-hidden-london",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Hidden London supplement module for Blades in the Dark in Foundry VTT",
     "type": "module",
     "scripts": {
