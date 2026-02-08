@@ -1,0 +1,44 @@
+// ─── Hidden London Push Yourself Button Styles ──────────────────────────────
+
+// Section injected into system action roll chat cards
+.hl-push-section {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+
+    .hl-push-label {
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #555;
+        margin-bottom: 4px;
+
+        i {
+            margin-right: 3px;
+        }
+    }
+
+    .hl-push-buttons {
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+    }
+
+    .hl-push-attr-button {
+        background: #4a4a4a;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 3px 8px;
+        cursor: pointer;
+        font-size: 11px;
+        flex: 1;
+        max-width: 120px;
+
+        &:hover {
+            background: #333;
+        }
+    }
+}

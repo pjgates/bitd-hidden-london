@@ -69,7 +69,6 @@ export default defineConfig({
     plugins: [
         viteStaticCopy({
             targets: [
-                { src: "src/threat-roll/templates/**/*", dest: "templates/threat-roll" },
                 { src: "module.json", dest: "." },
             ],
         }),

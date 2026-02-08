@@ -1,0 +1,18 @@
+{
+    "HIDDEN_LONDON": {
+        "Push": {
+            "PushYourself": "Push Yourself"
+        },
+        "Attribute": {
+            "Insight": "Insight",
+            "Prowess": "Prowess",
+            "Resolve": "Resolve"
+        },
+        "Settings": {
+            "EnablePushYourself": {
+                "Name": "Enable Push Yourself",
+                "Hint": "Adds 'Push Yourself' attribute buttons to action roll chat cards when the result is a failure or partial success."
+            }
+        }
+    }
+}

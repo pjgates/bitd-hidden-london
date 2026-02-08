@@ -1,10 +1,9 @@
-import { registerSettings, registerTemplates } from "../threat-roll/index.js";
+import { registerSettings } from "../push-yourself/index.js";
 
 /**
  * Called once during the Foundry `init` hook.
- * Registers module settings and preloads Handlebars templates.
+ * Registers module settings.
  */
 export function onInit(): void {
     registerSettings();
-    registerTemplates();
 }

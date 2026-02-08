@@ -4,17 +4,16 @@ A [Foundry VTT](https://foundryvtt.com/) module for the [Blades in the Dark](htt
 
 ## Features
 
-### Threat Rolls
+### Push Yourself Buttons
 
-A custom roll dialog and chat output implementing Hidden London's threat roll mechanics:
+When an action roll results in a **failure** or **partial success**, this module injects attribute buttons directly onto the chat card so players can quickly push themselves without navigating back to the character sheet.
 
-- **Dice pool** selection (0d–10d), with zero-mode (2d6 take lowest)
-- **Position**: Standard (6 = Success, 4–5 = Peril, 1–3 = Threat) or Desperate (6 = Success, 1–5 = Threat, marks XP)
-- **Additional threats**: Accept extra risks for bonus dice — each additional threat adds +1d, and dice are assigned to threats after rolling (highest first)
-- **Effect levels**: Limited / Standard / Great / Extreme
-- **Situational modifiers**: Home turf, spirit pact, operating blind, hostile territory, target vulnerable/prepared — displayed on the chat card
-- **Critical**: Two 6s = critical success
-- **Push Yourself**: Button on the chat card opens a secondary roll to determine stress cost (Critical = 0, 6 = 1, 4–5 = 2, 1–3 = 3) using Insight, Prowess, or Resolve
+- Three buttons appear — **Insight**, **Prowess**, **Resolve** — each showing the actor's current dice pool
+- Clicking a button opens the system's standard attribute roll dialog for that attribute
+- All push mechanics (stress calculation, chat output) are handled by the upstream Blades in the Dark system
+- Controlled by the **Enable Push Yourself** world setting
+
+> **Note:** The upstream system's **Push Yourself** setting (from Deep Cuts) must be enabled for push rolls to use the Deep Cuts stress table. Otherwise the system treats attribute rolls as standard resistance rolls.
 
 ### Compendium Packs
 
@@ -22,7 +21,7 @@ Three compendium packs built from vault markdown:
 
 - **Hidden London — Factions**: Criminal gangs, occult organisations, spirit courts, and institutions
 - **Hidden London — Locations**: London districts from Mayfair to Jacob's Island
-- **Hidden London — Reference**: Threat roll rules, faction directory, spirits, the hidden world, heritages & backgrounds
+- **Hidden London — Reference**: Faction directory, spirits, the hidden world, heritages & backgrounds
 
 ## Installation
 
@@ -48,7 +47,7 @@ Requires **Node.js 20+**.
 # Install dependencies
 npm install
 
-# Build (TypeScript + SCSS + templates + lang merge)
+# Build (TypeScript + SCSS + lang merge)
 npm run build
 
 # Watch for changes
@@ -74,17 +73,12 @@ src/
   module.ts              # Entry point (init + ready hooks)
   constants.ts           # Module ID
   hooks/                 # Foundry hook handlers
-  threat-roll/           # Threat roll feature
-    dialog.ts            # Roll configuration dialog
-    roll.ts              # Dice execution + result interpretation
-    push.ts              # Push yourself sub-roll
-    chat.ts              # Chat message rendering
-    scene-control.ts     # Scene control button registration
+  push-yourself/         # Push yourself chat button feature
+    chat.ts              # Injects buttons into system action roll cards
     settings.ts          # Module settings
-    templates/           # Handlebars chat card templates
     styles/              # Feature-scoped SCSS
     lang/                # i18n strings
-  shared/                # Cross-cutting types, styles, lang
+  shared/                # Cross-cutting styles, lang
   types/                 # Foundry/BitD type augmentations
 scripts/
   convert-vault.ts       # Vault markdown → Foundry JSON
